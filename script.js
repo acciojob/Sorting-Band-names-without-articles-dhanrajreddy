@@ -1,11 +1,7 @@
-//your code here
 let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
-let words= touristSpots.split(" ");
-	words.filter((word)=>{
-		let smallCaseWord=word.toLowerCase(word);
-		if(smallCaseWord===a || smallCaseWord===an || smallCaseWord === the)
-				return false;
-		else
-			return true;
-	}
-);
+let words = touristSpots.join(" "); // Used join to create a string from the array
+let articlelessWords = words.split(" ").filter(word => {
+    return !(word === 'a' || word === 'an' || word === 'the' ||
+    word === 'A' || word === 'An' || word === 'The');
+});
+console.log(articlelessWords);
