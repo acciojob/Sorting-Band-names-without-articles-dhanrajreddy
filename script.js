@@ -1,26 +1,29 @@
-let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
-function sortMethod(words){
-	let articlelessWords = words.toLowerCase().split(" ").filter(word => {
-	   if(word === 'a' || word === 'an' || word === 'the')
-			return false;
-		else
-			return true;
-	});
-	return articlelessWords.join(" ")
-
+let arr = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
+function getArticleLessString(input){
+	let words=input.split(" ");
+	let nonArtileWords=words.filter(
+		(word)=>{
+			let smallCaseWord=word.toLowerCase();
+			if(smallCaseWord==="a",smallCaseWord==="an",smallCaseWord==="the")
+				return false;
+			else
+				return true;
+		}
+	);
+		return nonArtileWords.join(" ");
+}
+let arr1=[];
+hashMap={}
+for(let i=0;i<arr.length;i++){
+	let articleLessString=getArticleLessString(arr[i]);
+	hashMap[articleLessString]=arr[i];
+	arr1.push(articleLessString);
 }
 
-let hashMap={};
-let arr=[];
-for(let i=0;i<touristSpots.length;i++){
-	let key=sortMethod(touristSpots[i]);
-    hashMap[key]=touristSpots[i];
-	arr.push(key);
-}
- arr.sort();
+arr1.sort();
+console.log(arr1);
 let outputList=[];
-arr.forEach((output)=>{
-    outputList.push(hashMap[output])
-})
-                    
-console.log(outputList);
+ arr1.forEach(element => {
+	outputList.push=hashMap.element;
+ });
+ console.log(outputList);
